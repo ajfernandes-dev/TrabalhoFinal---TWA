@@ -82,30 +82,137 @@
         }
     ]
  },
- "7": 
+"7": 
  {
     "texto": "O guarda passa. Você o observa deixar cair um pequeno Medalhão de Prata ao lado da armadura.",
+    "item": "Medalhão",
     "opcoes": [
         {
-            "texto": " Investigar a lareira",
-            "vaiPara": " 3"
+            "texto": "Pegar o medalhão e seguir o guarda",
+            "vaiPara": "11"
         },
         {
-            "texto": "Subir a escada",
-            "vaiPara": "4"
+            "texto": "Voltar para a lareira",
+            "vaiPara": "3"
+        }
+    ]
+ },
+"8": 
+ {
+    "texto": "Você sai do túnel na parte de trás da biblioteca e encontra um Dardo Envenenado que Eldrin deve ter deixado.",
+    "item":"Dardo Envenenado",
+    "opcoes": [
+        {
+            "texto": "Voltar à Sala.",
+            "vaiPara": "12"
         }
     ]
  },
 
+"9": 
+ {
+    "texto": "O desmoronamento te prende, causando 4 de dano. Você consegue se libertar e tem que rastejar de volta.",
+     "atributo_mudanca":{
+        "vida": -4
+    },
+    "opcoes": [
+        {
+            "texto": "Voltar à Sala.",
+            "vaiPara": "1"
+        }
+    ]
+ },
 
+ "10":
+ {
+    "texto":"O ser é uma criatura sombria. Você precisa de Sorte para escapar.",
+    "teste": {
+        "tipo_dado": "1d6",
+        "atributo": "Sorte",
+        "valor_alvo": 5
+    },
+    "opcoes":
+    [
+        {
+         "texto": "Realizar Teste de Sorte (1D6)",
+         "vaiPara": "TESTE_SORTE"
+        }
+    ]
+ },
+"TESTE_ SORTE_RESULTADO":
+{
+    "sucesso": "13",
+    "falha" : "Fim A"
+},
+"11": 
+ {
+    "texto": "O guarda leva você para um escritório onde uma figura de manto está esperando. Eles exigem o relicário.",
+    "opcoes": [
+        {
+            "texto": " Entregar o relicário ",
+            "vaiPara": "Fim B"
+        },
+        {
+            "texto": " Recusar e lutar",
+            "vaiPara": "14"
+        }
+    ]
+ },
+ "12":
+ {
+    "texto" : "Você encontra o guarda no topo da escada. Você pode usar seu Dardo Envenenado.",
+    "opcoes": [
+        {
+        "texto": "Usar Dardo",
+        "vaiPara": "15",
+        "requer_item": "Dardo Envenenado"
+        },
+        {
+            "texto": "Lutar normalmente",
+            "vaiPara":"10"
+        }
+    ]
+},
 
+"13": 
+ {
+    "texto": " Você consegue escapar da criatura.",
+    "opcoes": [
+        {
+            "texto": "Voltar à Sala",
+            "vaiPara": "1"
+        }
+    ]
+ },
+"14":
+ {
+    "texto":"A luta começa! Você precisa de Força e está em desvantagem.",
+    "teste": {
+        "tipo_dado": "2d6",
+        "atributo": "Força",
+        "valor_alvo": 9
+    },
+    "opcoes":
+    [
+        {
+         "texto": "Realizar Teste de Força (2D6)",
+         "vaiPara": "TESTE_FORCA_FINAL "
+        }
+    ]
+ },
+ "TESTE_FORCA_FINAL_RESULTADO":{
+    "sucesso": "Fim C",
+    "falha": "Fim A"
+ },
 
-
-
-
-
-
-
-
-
+ "15": 
+ {
+    "texto": "O dardo acerta o guarda, que cai. Você encontra Eldrin amarrado na sala do escritório! Você o liberta e ele revela a conspiração.",
+    "opcoes": [
+        {
+            "texto": "Libertar Eldrin",
+            "vaiPara":  "Fim C"
+        }
+    ]
+ }
 }
