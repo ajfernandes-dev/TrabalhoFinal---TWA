@@ -214,5 +214,23 @@
             "vaiPara":  "Fim C"
         }
     ]
- }
+ },
+ "Fim A": {
+    "texto": "Você falhou no teste e foi subjugado. Sua aventura termina aqui.",
+    "final": true,
+    "opcoes": []
+},
+
+ "Fim B": {
+    "texto": "Você liberta o professor Eldrin! O mistério é resolvido. Eldrin lhe dá uma das joias para as ranhuras do relicário.",
+    "final": true,
+    "opcoes": []
+},
+
+
+"Fim C":{
+    "texto":"Você superou os desafios e encontrou Eldrin. A conspiração foi revelada. Sua força/inteligência o levou à vitória!",
+    "final": true,
+    "opcoes": []
+}
 }
