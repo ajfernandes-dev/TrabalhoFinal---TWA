@@ -1,0 +1,111 @@
+{
+"1": 
+ {
+    "texto": "Você está na Seção Proibida da biblioteca, sob o luar. A porta atrás de você se fecha com um clique sinistro. Sua busca é pelo desaparecido Prof. Eldrin, que deixou para trás um estranho relicário de vidro.",
+    "opcoes": [
+        {
+            "texto": "Examinar o relicário.",
+            "vaiPara": "2"
+        }
+    ]
+ },
+"2": 
+ {
+    "texto": "O relicário tem três ranhuras vazias. Você percebe que o professor escondeu algo. Uma lareira antiga e uma escada de serviço são suas únicas saídas.",
+    "opcoes": [
+        {
+            "texto": " Investigar a lareira",
+            "vaiPara": " 3"
+        },
+        {
+            "texto": "Subir a escada",
+            "vaiPara": "4"
+        }
+    ]
+ },
+"3": 
+ {
+    "texto": "A lareira está fria. Você encontra um velho Cachimbo de Eldrin e uma chave enferrujada sob as cinzas (+1 Sorte).",
+    "item": "Cachimbo",
+    "opcoes": [
+        {
+            "texto": ". Continuar pela lareira (túnel)",
+            "vaiPara": "5"
+        }
+    ]
+ },
+"4": 
+ {
+    "texto": "A escada leva a um corredor escuro. Você ouve passos lentos se aproximando.",
+    "opcoes": [
+        {
+            "texto": "Correr para o final do corredor",
+            "vaiPara": "6"
+        },
+        {
+            "texto": "Esconder-se em uma armadura",
+            "vaiPara": "7"
+        }
+    ]
+ },
+"5":
+ {
+    "texto":"O túnel é estreito e desmorona. Você deve usar toda a sua Força para passar. O teste exigido é: **Rolar 2D6**. Se o resultado for igual ou maior que 7, você avança. Caso contrário, você fica preso.",
+    "teste": {
+        "tipo_dado": "2d6",
+        "atributo": "Força",
+        "valor_alvo": 7
+    },
+    "opcoes":
+    [
+        {
+         "texto": "Realizar Teste de Força (2D6)",
+         "vaiPara": "TESTE_FORCA "
+        }
+    ]
+ },
+"TESTE_ FORCA_RESULTADO":
+{
+    "sucesso": "8",
+    "falha" : "9"
+},
+"6":
+ {
+    "texto": "Você corre, mas tropeça em um obstáculo invisível. Você perde 2 de Vida e fica encurralado.",
+    "atributo_mudanca":{
+        "vida":  -2
+    },
+    "opcoes": [
+        {
+            "texto": "Lutar",
+            "vaiPara": "10"
+        }
+    ]
+ },
+ "7": 
+ {
+    "texto": "O guarda passa. Você o observa deixar cair um pequeno Medalhão de Prata ao lado da armadura.",
+    "opcoes": [
+        {
+            "texto": " Investigar a lareira",
+            "vaiPara": " 3"
+        },
+        {
+            "texto": "Subir a escada",
+            "vaiPara": "4"
+        }
+    ]
+ },
+
+
+
+
+
+
+
+
+
+
+
+
+}
