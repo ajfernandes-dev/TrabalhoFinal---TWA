@@ -1,0 +1,48 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+}
+
+header{
+    background: #222;
+    color: rgb(69, 220, 164);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+#conatiner{
+    display: flex;
+    padding:20px;
+    gap:20px;
+}
+#capitulo{
+    background: white;
+    padding: 20px;
+    border-radius:10px;
+    flex:2;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+#ficha {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    height:fit-content;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+button.opcao{
+    display: block;
+    background: #222;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+button.opcao:hover{
+    background: #444;
+}
