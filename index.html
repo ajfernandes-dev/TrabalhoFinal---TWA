@@ -1,44 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livro-Jogo - A Busca por Eldrin</title>
+    <title>Aventura na Biblioteca - Livro-Jogo</title>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header> 
-        <h1> A Busca por Eldrin </h1>
-        <button onclick="location.reload()" style="padding: 8px 16px;">Reiniciar</button>
-    </header>
+    
+    <main id="container-jogo">
+        
+        <aside id="ficha">
+            <h2>Ficha de Personagem</h2>
+            <div id="status-atributos">
+                <p>Vida: <span id="vida-valor">10</span></p>
+                <p>Força: <span id="forca-valor">3</span></p>
+                <p>Sorte: <span id="sorte-valor">3</span></p>
+            </div>
 
-    <div id="container">
+            <h3>Inventário</h3>
+            <ul id="inventario-lista">
+                <li>(Vazio)</li>
+            </ul>
+        </aside>
 
-            <section id="capitulo">
-                <h2>Carregando história...</h2>
+        <section id="area-historia">
+            
+            <h1 id="titulo-capitulo">Carregando Aventura...</h1>
+            
+            <div id="historia-texto">
+                <p>Aguarde o carregamento do JSON.</p>
+            </div>
 
-            </section>
-
-            <aside id="ficha">
-                <h2>Ficha do Personagem</h2>
-                <p><strong>Vida:</strong> <span id="vida">10 </span></p>
-                <p><strong>Força:</strong> <span id="forca">5 </span></p>
-                <p><strong>Sorte:</strong> <span id="sorte">4 </span></p>
-
-                <h3>Inventário</h3>
-                <ul id="inventario"></ul>
-
+            <div id="opcoes">
+                </div>
+            
+            <div id="area-dados" style="display: none;">
                 <hr>
+                <h3>Teste de Dados</h3>
+                <p id="resultado-dado">Clique no botão para rolar o dado.</p>
+                <button id="botao-rolar-dado">Realizar Rolagem</button>
+            </div>
 
-                <h3>Rolar Dados</h3>
-                <input id="inputDados" value ="2d6">
-                <button onclick="rolarDados()">Rolar </button>
-                <p>Resultado: <span id="resultadoDados">-</span></p>
+        </section>
 
-            </aside>
-    </div>
+    </main>
     
-    <script type="module" src="main.js"></script>
-    
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

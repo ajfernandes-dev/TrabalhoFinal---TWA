@@ -1,236 +1,213 @@
 {
-"1": 
- {
+  "1": {
     "texto": "Você está na Seção Proibida da biblioteca, sob o luar. A porta atrás de você se fecha com um clique sinistro. Sua busca é pelo desaparecido Prof. Eldrin, que deixou para trás um estranho relicário de vidro.",
     "opcoes": [
-        {
-            "texto": "Examinar o relicário.",
-            "vaiPara": "2"
-        }
+      {
+        "texto": "Examinar o relicário.",
+        "vaiPara": "2"
+      }
     ]
- },
-"2": 
- {
+  },
+  "2": {
     "texto": "O relicário tem três ranhuras vazias. Você percebe que o professor escondeu algo. Uma lareira antiga e uma escada de serviço são suas únicas saídas.",
     "opcoes": [
-        {
-            "texto": " Investigar a lareira",
-            "vaiPara": " 3"
-        },
-        {
-            "texto": "Subir a escada",
-            "vaiPara": "4"
-        }
+      {
+        "texto": "Investigar a lareira",
+        "vaiPara": "3"
+      },
+      {
+        "texto": "Subir a escada",
+        "vaiPara": "4"
+      }
     ]
- },
-"3": 
- {
+  },
+  "3": {
     "texto": "A lareira está fria. Você encontra um velho Cachimbo de Eldrin e uma chave enferrujada sob as cinzas (+1 Sorte).",
     "item": "Cachimbo",
+    "atributo_mudanca": {
+      "sorte": 1
+    },
     "opcoes": [
-        {
-            "texto": ". Continuar pela lareira (túnel)",
-            "vaiPara": "5"
-        }
+      {
+        "texto": "Continuar pela lareira (túnel)",
+        "vaiPara": "5"
+      }
     ]
- },
-"4": 
- {
+  },
+  "4": {
     "texto": "A escada leva a um corredor escuro. Você ouve passos lentos se aproximando.",
     "opcoes": [
-        {
-            "texto": "Correr para o final do corredor",
-            "vaiPara": "6"
-        },
-        {
-            "texto": "Esconder-se em uma armadura",
-            "vaiPara": "7"
-        }
+      {
+        "texto": "Correr para o final do corredor",
+        "vaiPara": "6"
+      },
+      {
+        "texto": "Esconder-se em uma armadura",
+        "vaiPara": "7"
+      }
     ]
- },
-"5":
- {
-    "texto":"O túnel é estreito e desmorona. Você deve usar toda a sua Força para passar. O teste exigido é: **Rolar 2D6**. Se o resultado for igual ou maior que 7, você avança. Caso contrário, você fica preso.",
+  },
+  "5": {
+    "texto": "O túnel é estreito e desmorona. Você deve usar toda a sua Força para passar. O teste exigido é: **Rolar 2D6**. Se o resultado for igual ou maior que 7, você avança. Caso contrário, você fica preso.",
     "teste": {
-        "tipo_dado": "2d6",
-        "atributo": "Força",
-        "valor_alvo": 7
-    },
-    "opcoes":
-    [
-        {
-         "texto": "Realizar Teste de Força (2D6)",
-         "vaiPara": "TESTE_FORCA "
-        }
-    ]
- },
-"TESTE_ FORCA_RESULTADO":
-{
-    "sucesso": "8",
-    "falha" : "9"
-},
-"6":
- {
-    "texto": "Você corre, mas tropeça em um obstáculo invisível. Você perde 2 de Vida e fica encurralado.",
-    "atributo_mudanca":{
-        "vida":  -2
+      "tipo_dado": "2d6",
+      "atributo": "Força",
+      "valor_alvo": 7
     },
     "opcoes": [
-        {
-            "texto": "Lutar",
-            "vaiPara": "10"
-        }
+      {
+        "texto": "Realizar Teste de Força (2D6)",
+        "vaiPara": "TESTE_FORCA"
+      }
     ]
- },
-"7": 
- {
+  },
+  "5_RESULTADO": {
+    "sucesso": "8",
+    "falha": "9"
+  },
+  "6": {
+    "texto": "Você corre, mas tropeça em um obstáculo invisível. Você perde 2 de Vida e fica encurralado.",
+    "atributo_mudanca": {
+      "vida": -2
+    },
+    "opcoes": [
+      {
+        "texto": "Lutar (Teste de Sorte)",
+        "vaiPara": "10"
+      }
+    ]
+  },
+  "7": {
     "texto": "O guarda passa. Você o observa deixar cair um pequeno Medalhão de Prata ao lado da armadura.",
     "item": "Medalhão",
     "opcoes": [
-        {
-            "texto": "Pegar o medalhão e seguir o guarda",
-            "vaiPara": "11"
-        },
-        {
-            "texto": "Voltar para a lareira",
-            "vaiPara": "3"
-        }
+      {
+        "texto": "Pegar o medalhão e seguir o guarda",
+        "vaiPara": "11"
+      },
+      {
+        "texto": "Voltar para a lareira",
+        "vaiPara": "3"
+      }
     ]
- },
-"8": 
- {
+  },
+  "8": {
     "texto": "Você sai do túnel na parte de trás da biblioteca e encontra um Dardo Envenenado que Eldrin deve ter deixado.",
-    "item":"Dardo Envenenado",
+    "item": "Dardo Envenenado",
     "opcoes": [
-        {
-            "texto": "Voltar à Sala.",
-            "vaiPara": "12"
-        }
+      {
+        "texto": "Voltar à Sala.",
+        "vaiPara": "12"
+      }
     ]
- },
-
-"9": 
- {
+  },
+  "9": {
     "texto": "O desmoronamento te prende, causando 4 de dano. Você consegue se libertar e tem que rastejar de volta.",
-     "atributo_mudanca":{
-        "vida": -4
+    "atributo_mudanca": {
+      "vida": -4
     },
     "opcoes": [
-        {
-            "texto": "Voltar à Sala.",
-            "vaiPara": "1"
-        }
+      {
+        "texto": "Voltar à Sala.",
+        "vaiPara": "1"
+      }
     ]
- },
-
- "10":
- {
-    "texto":"O ser é uma criatura sombria. Você precisa de Sorte para escapar.",
+  },
+  "10": {
+    "texto": "O ser é uma criatura sombria. Você precisa de Sorte para escapar. O teste exigido é: **Rolar 1D6**. Se o resultado for igual ou maior que 5, você escapa.",
     "teste": {
-        "tipo_dado": "1d6",
-        "atributo": "Sorte",
-        "valor_alvo": 5
+      "tipo_dado": "1d6",
+      "atributo": "Sorte",
+      "valor_alvo": 5
     },
-    "opcoes":
-    [
-        {
-         "texto": "Realizar Teste de Sorte (1D6)",
-         "vaiPara": "TESTE_SORTE"
-        }
+    "opcoes": [
+      {
+        "texto": "Realizar Teste de Sorte (1D6)",
+        "vaiPara": "TESTE_SORTE"
+      }
     ]
- },
-"TESTE_ SORTE_RESULTADO":
-{
+  },
+  "10_RESULTADO": {
     "sucesso": "13",
-    "falha" : "Fim A"
-},
-"11": 
- {
+    "falha": "Fim A"
+  },
+  "11": {
     "texto": "O guarda leva você para um escritório onde uma figura de manto está esperando. Eles exigem o relicário.",
     "opcoes": [
-        {
-            "texto": " Entregar o relicário ",
-            "vaiPara": "Fim B"
-        },
-        {
-            "texto": " Recusar e lutar",
-            "vaiPara": "14"
-        }
+      {
+        "texto": "Entregar o relicário",
+        "vaiPara": "Fim B"
+      },
+      {
+        "texto": "Recusar e lutar",
+        "vaiPara": "14"
+      }
     ]
- },
- "12":
- {
-    "texto" : "Você encontra o guarda no topo da escada. Você pode usar seu Dardo Envenenado.",
+  },
+  "12": {
+    "texto": "Você encontra o guarda no topo da escada. Você pode usar seu Dardo Envenenado.",
     "opcoes": [
-        {
+      {
         "texto": "Usar Dardo",
         "vaiPara": "15",
         "requer_item": "Dardo Envenenado"
-        },
-        {
-            "texto": "Lutar normalmente",
-            "vaiPara":"10"
-        }
+      },
+      {
+        "texto": "Lutar normalmente",
+        "vaiPara": "10"
+      }
     ]
-},
-
-"13": 
- {
-    "texto": " Você consegue escapar da criatura.",
+  },
+  "13": {
+    "texto": "Você consegue escapar da criatura.",
     "opcoes": [
-        {
-            "texto": "Voltar à Sala",
-            "vaiPara": "1"
-        }
+      {
+        "texto": "Voltar à Sala",
+        "vaiPara": "1"
+      }
     ]
- },
-"14":
- {
-    "texto":"A luta começa! Você precisa de Força e está em desvantagem.",
+  },
+  "14": {
+    "texto": "A luta começa! Você precisa de Força e está em desvantagem. O teste exigido é: **Rolar 2D6**. Se resultado ≥ 9, vá para Fim C.",
     "teste": {
-        "tipo_dado": "2d6",
-        "atributo": "Força",
-        "valor_alvo": 9
+      "tipo_dado": "2d6",
+      "atributo": "Força",
+      "valor_alvo": 9
     },
-    "opcoes":
-    [
-        {
-         "texto": "Realizar Teste de Força (2D6)",
-         "vaiPara": "TESTE_FORCA_FINAL "
-        }
+    "opcoes": [
+      {
+        "texto": "Realizar Teste de Força (2D6)",
+        "vaiPara": "TESTE_FORCA_FINAL"
+      }
     ]
- },
- "TESTE_FORCA_FINAL_RESULTADO":{
+  },
+  "14_RESULTADO": {
     "sucesso": "Fim C",
     "falha": "Fim A"
- },
-
- "15": 
- {
+  },
+  "15": {
     "texto": "O dardo acerta o guarda, que cai. Você encontra Eldrin amarrado na sala do escritório! Você o liberta e ele revela a conspiração.",
+    "item_removido": "Dardo Envenenado",
     "opcoes": [
-        {
-            "texto": "Libertar Eldrin",
-            "vaiPara":  "Fim C"
-        }
+      {
+        "texto": "Libertar Eldrin",
+        "vaiPara": "Fim C"
+      }
     ]
- },
- "Fim A": {
+  },
+  "Fim A": {
     "texto": "Você falhou no teste e foi subjugado. Sua aventura termina aqui.",
     "final": true,
     "opcoes": []
-},
-
- "Fim B": {
+  },
+  "Fim B": {
     "texto": "Você liberta o professor Eldrin! O mistério é resolvido. Eldrin lhe dá uma das joias para as ranhuras do relicário.",
     "final": true,
     "opcoes": []
-},
-
-
-"Fim C":{
-    "texto":"Você superou os desafios e encontrou Eldrin. A conspiração foi revelada. Sua força/inteligência o levou à vitória!",
+  },
+  "Fim C": {
+    "texto": "Você superou os desafios e encontrou Eldrin. A conspiração foi revelada. Sua força/inteligência o levou à vitória!",
     "final": true,
     "opcoes": []
-}
+  }
 }
