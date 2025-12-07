@@ -129,6 +129,92 @@ export class UI{
     }
 
     _formatarTexto(text = ''){
+        return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+    }
+
+    _handleTesteCapitulo(cap,key){
+        const resultado = this.jogo.executarTeste(cap.teste);
+        this.registrar(`Teste (seção ${key}) -> dados: ${resultado.totalDados} + atrib: ${resultado.valorAtributo} = ${resultado.total} (alvo ${resultado.alvo}) => ${resultado.sucesso ? 'SUCESSO' : 'FALHA'}`);
         
+        const jogo = this.jogo;
+
+        if(cap.evento && (cap.evento.sucesso || cap.evento.falha)){
+            const destino = resultado.sucesso ? cap.evento.sucesso : cap.evento.falha;
+            if(destino) return jogo.irPara(destino);
+        }
+    
+        if(cap.teste && (cap.teste.sucesso || cap.teste.falha)){
+            const destino = resultado.sucesso ? cap.teste.sucesso : cap.teste.falha;
+            if(destino) return jogo.irPara(destino);
+        }
+
+        let tokenBase = null;
+        if(Array.isArray(cap.opcoes)){
+            for(const op of cap.opcoes){
+                if(typeof op.vaiPara === 'string' && op.vaiPara.toUpperCase().includes('TESTE')){
+                    tokenBase = op.vaiPara;
+                    break;
+                }
+            }
+        }
+
+        if(!tokenBase) tokenBase = key;
+
+        const chaveResultado = jogo.acharChaveResultado(tokenBase);
+        if(chaveResultado){
+            const registro = jogo.historia[chaveResultado];
+            const destino = resultado.sucesso ? registro.sucesso : registro.falha;
+            if (destino) return jogo.irPara(destino);
+        }
+
+        this.registrar('Resultado do teste decidido,mas nenhuma rota de sucesso/falha encontrada no JSON');
+    }
+
+    _handleOpcao(op){
+        if (op.teste){
+            const resultado = this.jogo.executarTeste(op.teste);
+            this.registrar(`Teste (opção) -> dados: ${resultado.totalDados} + atrib:${resultado.valorAtributo} = ${resultado.total} (alvo ${resultado.alvo}) => ${resultado.sucesso ? 'SUCESSO' : 'FALHA'} `);
+
+            const chaveResultado = this.jogo.acharChaveResultado(op.vaiPara);
+            if(chaveResultado) {
+                const registro = this.jogo.historia[chaveResultado];
+                const destino = resultado.sucesso ? registro.sucesso : registro.falha;
+                if(destino) return this.jogo.irPara(destino);
+            }
+
+            if(op.teste.sucesso || op.teste.falha) {
+                const destino = resultado.sucesso ? op.teste.sucesso : op.teste.falha;
+                if (destino) return this.jogo.irPara(destino);
+            }
+
+            if(typeof op.vaiPara === 'string' && op.vaiPara.toUpperCase().includes('TESTE')){
+                this.registrar('Opção vinculada a teste, mas não foi encontrada registro RESULTADO no JSON');
+                return;
+            }
+
+            return this.jogo.irPara(op.vaiPara);
+        }
+
+        if(op.requer_item && !this.jogo.personagem.inventario.includes(op.requer_item)) {
+            this.registrar(`Você precisa do item "${op.requer_item}" para essa ação`);
+            return;
+        }
+
+        if(op.atributo_mudança) {
+            this.jogo.personagem.aplicarMudancas(op.atributo_mudança);
+            this.registrar(`Aplicado mudança: ${JSON.stringify(op.atributo_mudança)}`);
+
+        }
+
+        if (typeof op.vaiPara === 'string' && op.vaiPara.toUpperCase().includes('TESTE')){
+            const chaveResultado = this.jogo.acharChaveResultado(op.vaiPara);
+            if (chaveResultado){
+                this.registrar('A opção aponta para um token de teste.Se deseja que ocorra,adicione um campo "teste" na opção ou no capitulo');
+                return;
+            }
+        }
+
+        this.jogo.irPara(op.vaiPara);
     }
 }
